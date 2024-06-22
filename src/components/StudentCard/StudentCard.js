@@ -1,9 +1,16 @@
-import React from 'react'
+import "./Studentcard.css"
+import MicOn from "./img/micon.png"
+import Micoff from "./img/micoff.png"
 
-function StudentCard() {
+
+function Studentcard({StudentName , StudentImage ,MicState}) {
   return (
-    <div>StudentCard</div>
+    <div className="Studentcard">
+        <img src={MicState? MicOn : Micoff} className="student-mic" />
+        <img src={StudentImage} className="student-img" />
+        <span className="student-name-text"> {StudentName}</span>
+    </div>
   )
 }
 
-export default StudentCard
+export default Studentcard
