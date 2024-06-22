@@ -1,6 +1,19 @@
 import ReactDOM from 'react-dom/client';
 
+import Home from './views/Home/Home';
+
+import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(<h1>Hello</h1>);
-
+const router=createBrowserRouter([
+  {
+    path:"/",
+    element:<Home/>
+  },
+  {
+    path:"*",
+    element:<h1>404 Not Found</h1>
+  }
+])
+root.render(<RouterProvider router={router}/>)
